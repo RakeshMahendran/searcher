@@ -10,6 +10,9 @@ const PORT = process.env.PORT || 6031;
 dotenv.config();
 connectDB();
 
+app.use(express.json())
+
+
 app.get("/", (req, res) => {
   res.send("hello");
 });
@@ -18,5 +21,5 @@ app.get("/", (req, res) => {
 app.use("/listings", listingsRouter);
 
 app.listen(PORT, () => {
-  console.log("server is listening at port https://localhost:6031");
+  console.log("server is listening at port http://localhost:6031");
 });

@@ -3,9 +3,9 @@ const PropListings = require("../models/listingModel")
 
 const searchListings = async (req, res) => {
   try {
-    console.log(req.param.name);
+    console.log(req.params.name);
     // const result = await PropListings.find({ Property_Name: { $regex: "/^" + req.param.name + "/" } });
-    const result = await PropListings.find({ Property_Name: new RegExp(req.param.name) });
+    const result = await PropListings.find({ City_Name: new RegExp(req.params.name) });
 
     res.json(result);
   } catch (err) {

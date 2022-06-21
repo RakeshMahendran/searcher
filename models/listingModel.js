@@ -15,4 +15,4 @@ const listingsSchema = new mongoose.Schema({
 
 const PropListings = mongoose.model("Listings", listingsSchema);
 
-module.exports =  PropListings 
+module.exports =  PropListings();

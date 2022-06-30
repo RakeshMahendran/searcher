@@ -3,22 +3,21 @@ const app = express();
 const connectDB = require("./dbConnect.js");
 const dotenv = require('dotenv');
 
-const listingsRouter = require("./routes/listingRoute.js");
 const PORT = process.env.PORT || 6031;
 
-
+//Load Config
 dotenv.config();
 connectDB();
 
 app.use(express.json())
 
 
-app.get("/", (req, res) => {
-  res.send("hello");
-});
+//app.get("/", (req, res) => {
+//  res.send("hello");
+//});
 
 
-app.use("/listings", listingsRouter);
+app.use("/abc", require('./routes/listingRoute'));
 
 app.listen(PORT, () => {
   console.log("server is listening at port http://localhost:6031");

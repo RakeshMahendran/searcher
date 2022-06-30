@@ -1,18 +1,28 @@
 const mongoose = require('mongoose');
 
 const listingsSchema = new mongoose.Schema({
-    City_Name: {
+    Cityname: {
         type: "string",
     },
-    Country_Name: {
+    Countryname: {
         type: "string",
     },
-    Country_Code: { 
+    WorldAreaCode: { 
         type: "string",
+    },
+
+    AirportCode: {
+        type: "string",
+    },
+    AirportName: {
+         type: "string",
+    },
+    CountryAbbrev: {
+        type: "object",
     }
 })
 
 
 const PropListings = mongoose.model("Listings", listingsSchema);
 
-module.exports =  PropListings();
+module.exports =  PropListings;
